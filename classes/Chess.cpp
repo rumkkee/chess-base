@@ -52,6 +52,21 @@ void Chess::setUpBoard()
 }
 
 void Chess::FENtoBoard(const std::string& fen) {
+
+    ////
+    // Esther helper notes:
+        // The space at 0x0 is top left, and 7x7 is bottom right.
+        // We move through each row left to right, and each column top to down.
+
+        // if that coord is in piece notation,
+        // use pieceForPlayer to set and load the piece for that char
+        
+        // if char's unicode val represents a lowecase letter, add the black piece it represents
+        // if char's unicode val represents an uppercase letter, add the white piece it represents
+        // if char's unicode val represents a number (can be 1 to 8) skipCount, increment i by skipCount minus 1 (because we still increment at the end of the loop)
+        // if the next character is a slash "/", we can move up a column
+    ////
+
     // convert a FEN string to a board
     // FEN is a space delimited string with 6 fields
     // 1: piece placement (from white's perspective)
